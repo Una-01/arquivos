@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    font-family: "poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: 0; /*evita cálculos complicados de layout*/
+}
+/*cores padrão*/
+:root{
+    --body-color: #2B3333;
+    --nav-color: #3d5857;
+    --sid-nav: #30918F;
+    --text-color: #ffffff;
+    --search-bar: #294948;
+    --search-text: #1FBBB8;
+} 
+body{
+    background-color:var(--search-bar);
+    height: 100vh;
+}
+/*estilizando nav e nav bar*/
+nav{
+    position: fixed;
+    top:0;
+    left:0;
+    height:70px;
+    background-color: var(--search-bar);
+    width: 100%;
+}
+/*estilizando nav bar*/
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: rgb(66, 231, 231);
+    margin: 0 auto; /*Remove as margens externas padrão de todos os elementos, evitando espaçamentos indesejados.*/
+    padding: 0  30px; /*Remove os preenchimentos internos padrão dos elementos.*/
+    background-color: var(--nav-color);
+    display: flex; /*observe quando a linha for acrescentada*/
+    align-items: center;
+    justify-content: space-between;
+}    
+.nav-bar .nav-links{
+    display:flex;
+    align-items: center;
+}
+.nav-bar .nav-links li{
+    list-style: none;
+    margin: 0 5px;
+}
+.nav-links li a{
+    position:relative;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding:10px;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-links li a::before{
+    content:'';
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    transform: translateX(50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+/*estilizando o botão de pesquisa*/
+nav .nav-bar .search-bar button {
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 10px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--body-color);
+    transition: background 0.3s;
+}
+
+nav .nav-bar .search-bar button:hover {
+    background-color: var(--search-text);
+    color: #fff;
+}
